@@ -16,14 +16,12 @@
         var type = window.location.hash.substring(1);
         switch(type) {
             case "apples":
-                document.getElementById("content").innerHTML =
-                `<header>
-                  <h1>Gallery </h1>
-                  <p>16 of 36
-                  <br/>A project for AP art</p>
-                  <a href="http://turtlesandbox.io">Back</a>
-                </header>
-                <section>
+                document.getElementById("headerContent").innerHTML = `
+                    <h1>Apples </h1>
+                    <p>16 of 36
+                    <br/>A project for AP art</p>
+                `;
+                document.getElementById("sectionContent").innerHTML = `
                   <span class="image">
                     <table>
                       <tr>
@@ -52,22 +50,32 @@
                       </tr>
                     </table>
                   </span>
-                </section>
-                <footer>
-                </footer>`;
+                `;
                 break;
             case "pie":
-                document.getElementById("content").innerHTML = '<span>pie</span>';
+                document.getElementById("headerContent").innerHTML = ``;
+                document.getElementById("sectionContent").innerHTML = ``;
                 break;
             default:
-                document.getElementById("content").innerHTML = '<br/>';
+                document.getElementById("headerContent").innerHTML = ``;
+                document.getElementById("sectionContent").innerHTML = ``;
         }
     }
     </script>
   </head>
   <body>
-    <div class="wrapper" id="content">
+    <div class="wrapper">
+        <header>
+            <span id="headerContent">
 
+            </span>
+            <a href="http://turtlesandbox.io">Back</a>
+        </header>
+        <section id="sectionContent">
+
+        </section>
+        <footer>
+        </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
   </body>
