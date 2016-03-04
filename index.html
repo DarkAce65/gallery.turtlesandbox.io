@@ -16,7 +16,7 @@
         var type = window.location.hash.substring(1);
         switch(type) {
             case "apples":
-                document.getElementById("show").innerHTML =
+                document.getElementById("content").innerHTML =
                 `<header>
                   <h1>Gallery </h1>
                   <p>16 of 36
@@ -57,10 +57,10 @@
                 </footer>`;
                 break;
             case "#apples":
-                document.getElementById("show").innerHTML = '<span>#########Hashtagggs</span>';
+                document.getElementById("content").innerHTML = '<span>#########Hashtagggs</span>';
                 break;
             default:
-                document.getElementById("show").innerHTML = '<br/>';
+                document.getElementById("content").innerHTML = '<br/>';
         }
     }
     </script>
