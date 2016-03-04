@@ -11,47 +11,63 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <script>
+    function showContent() {
+        var type = window.location.hash.substring(1);
+        switch(type) {
+            case "apples":
+                document.getElementById("show").innerHTML =
+                `<header>
+                  <h1>Gallery </h1>
+                  <p>16 of 36
+                  <br/>A project for AP art</p>
+                  <a href="http://turtlesandbox.io">Back</a>
+                </header>
+                <section>
+                  <span class="image">
+                    <table>
+                      <tr>
+                        <th><img src="IMG_3444 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
+                        <th><img src="IMG_3450 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
+                        <th><img src="IMG_3452 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
+                        <th><img src="IMG_3454 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
+                      </tr>
+                      <tr>
+                        <th><img src="IMG_3457 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
+                        <th><img src="IMG_3461 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
+                        <th><img src="IMG_3464 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
+                        <th><img src="IMG_3465 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
+                      </tr>
+                      <tr>
+                        <th><img src="IMG_3466 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
+                        <th><img src="IMG_3467 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
+                        <th><img src="IMG_3468 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
+                        <th><img src="IMG_3469 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
+                      </tr>
+                      <tr>
+                        <th><img src="IMG_3471 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
+                        <th><img src="IMG_3486 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
+                        <th><img src="IMG_3481 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
+                        <th><img src="IMG_3474 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
+                      </tr>
+                    </table>
+                  </span>
+                </section>
+                <footer>
+                </footer>`;
+                break;
+            case "#apples":
+                document.getElementById("show").innerHTML = '<span>#########Hashtagggs</span>';
+                break;
+            default:
+                document.getElementById("show").innerHTML = '<br/>';
+        }
+    }
+    </script>
   </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Gallery </h1>
-        <p>16 of 36
-        <br/>A project for AP art</p>
-        <a href="http://turtlesandbox.io">Back</a>
-      </header>
-      <section>
-        <span class="image">
-          <table>
-            <tr>
-              <th><img src="IMG_3444 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
-              <th><img src="IMG_3450 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
-              <th><img src="IMG_3452 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
-              <th><img src="IMG_3454 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
-            </tr>      
-            <tr>          
-              <th><img src="IMG_3457 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
-              <th><img src="IMG_3461 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
-              <th><img src="IMG_3464 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
-              <th><img src="IMG_3465 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
-            </tr>
-            <tr>
-              <th><img src="IMG_3466 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
-              <th><img src="IMG_3467 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
-              <th><img src="IMG_3468 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
-              <th><img src="IMG_3469 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
-            </tr>
-            <tr>
-              <th><img src="IMG_3471 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
-              <th><img src="IMG_3486 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
-              <th><img src="IMG_3481 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
-              <th><img src="IMG_3474 e.jpg" style="width: 300px; margin-bottom: 5px;"></th>
-            </tr>
-          </table>
-        </span>
-      </section>
-      <footer>
-      </footer>
+  <body onload="showContent()">
+    <div class="wrapper" id="content">
+
     </div>
     <script src="javascripts/scale.fix.js"></script>
   </body>
