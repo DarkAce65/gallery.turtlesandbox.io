@@ -15,8 +15,7 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <script>
-    function showContent() {
-        var type = window.location.hash.substring(1);
+    function showContent(type) {
         switch(type) {
             case "apples":
                 document.getElementById("headerContent").innerHTML = `
@@ -64,17 +63,22 @@
                 document.getElementById("sectionContent").innerHTML = ``;
         }
     }
+
+    function initContent() {
+        var type = window.location.hash.substring(1);
+        showContent(type)
+    }
     </script>
   </head>
-  <body onload="showContent()">
+  <body onload="initContent()">
     <div class="wrapper">
         <header>
             <span id="headerContent">
 
             </span>
             <p>
-                <a href="http://apples.turtlesandbox.io/#apples" onclick="location.reload()">Apples</a><br/>
-                <a href="http://apples.turtlesandbox.io/#pie" onclick="location.reload()">Pie</a>
+                <span style="color: #39c;" onclick="showContent('apples')">Apples</span><br/>
+                <span style="color: #39c;" onclick="showContent('pie')">Pie</span>
             </p>
             <a href="http://turtlesandbox.io">Back</a>
         </header>
