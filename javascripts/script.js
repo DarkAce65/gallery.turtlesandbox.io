@@ -27,11 +27,6 @@ function indexOfName(name) {
 	return -1;
 }
 
-function initContent() {
-	var galleryItem = window.location.hash.substring(1);
-	scrollToContent(indexOfName(galleryItem));
-}
-
 function createCard(index) {
 	var item = gallery[index];
 	unloadedIndices.splice(unloadedIndices.indexOf(index), 1);
