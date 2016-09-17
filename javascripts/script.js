@@ -1,18 +1,41 @@
-function scrollToContent(itemName) {
-	if(itemName) {
-		$("html, body").animate({
-			scrollTop: $("#" + itemName).offset().top - 60
-		}, 750);
+function scrollToContent(name) {
+	if(name) {
+		var item = $("#" + name);
+		if(item.length > 0) {
+			$("html, body").animate({
+				scrollTop: item.offset().top
+			}, 500);
+		}
+		else {
+			var i = indexOfName(name);
+			if(i !== -1) {
+				var card = createCard(i);
+				$("html, body").animate({
+					scrollTop: card.offset().top
+				}, 500);
+			}
+		}
 	}
 }
 
-function initContent() {
-	var type = window.location.hash.substring(1);
-	scrollToContent(type);
+function indexOfName(name) {
+	for(var i = 0; i < gallery.length; i++) {
+		if(name === gallery[i].name) {
+			return i;
+		}
+	}
+	return -1;
 }
 
-function createCard(item) {
-	var card = '<div id="' + item.title + '" class="card"><div class="title"><h2>' + item.title + '</h2><p class="subtitle">' + item.subtitle + '</p></div>';
+function initContent() {
+	var galleryItem = window.location.hash.substring(1);
+	scrollToContent(indexOfName(galleryItem));
+}
+
+function createCard(index) {
+	var item = gallery[index];
+	unloadedIndices.splice(unloadedIndices.indexOf(index), 1);
+	var card = '<div id="' + item.name + '" class="card"><div class="title"><h2>' + item.title + '</h2><p class="subtitle">' + item.subtitle + '</p></div>';
 	if(item.hasOwnProperty("galleryItems") && item.galleryItems.length > 0) {
 		card += '<div class="gallery square' + Math.round(Math.sqrt(item.galleryItems.length, 2)) + '">';
 		for(var i = 0; i < item.galleryItems.length; i++) {
