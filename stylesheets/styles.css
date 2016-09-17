@@ -61,6 +61,12 @@ a {
 	margin: 0 auto;
 }
 
+.clearfix {
+	content: "";
+	display: table;
+	clear: both;
+}
+
 blockquote {
 	border-left: 1px solid #e5e5e5;
 	margin: 0;

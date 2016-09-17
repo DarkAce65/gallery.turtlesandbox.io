@@ -30,7 +30,7 @@ function indexOfName(name) {
 function createCard(index) {
 	var item = gallery[index];
 	unloadedIndices.splice(unloadedIndices.indexOf(index), 1);
-	var card = '<div id="' + item.name + '" class="card"><div class="title"><h2>' + item.title + '</h2><p class="subtitle">' + item.subtitle + '</p></div>';
+	var card = '<div id="' + item.name + '" class="card"><div class="title"><h2>' + item.title + '</h2><p class="subtitle">' + item.subtitle + '</p><i class="clearfix"></i></div>';
 	if(item.hasOwnProperty("galleryItems") && item.galleryItems.length > 0) {
 		card += '<div class="gallery square' + Math.round(Math.sqrt(item.galleryItems.length, 2)) + '">';
 		for(var i = 0; i < item.galleryItems.length; i++) {
