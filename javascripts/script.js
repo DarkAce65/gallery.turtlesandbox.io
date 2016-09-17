@@ -8,15 +8,18 @@ function initContent() {
 }
 
 function createCard(item) {
-	var card = '<div class="card"><div class="title">' + item.header + '</div><div class="content">';
+	var card = '<div id="' + item.title + '" class="card"><div class="title"><h2>' + item.title + '</h2><p class="subtitle">' + item.subtitle + '</p></div>';
 	if(item.hasOwnProperty("galleryItems") && item.galleryItems.length > 0) {
-		card += '<div class="gallery">';
+		card += '<hr><div class="gallery">';
 		for(var i = 0; i < item.galleryItems.length; i++) {
 			card += '<a href="' + item.galleryItems[i] + '" data-lightbox="' + item.name + '"><img src="' + item.galleryItems[i] + '"></a>';
 		}
 		card += '</div>';
 	}
-	card += '<span class="caption">' + item.caption + '</span></div></div>';
+	else if(item.hasOwnProperty("content")) {
+		card += '<hr><p class="text">' + item.content + '</p>';
+	}
+	card += '</div>';
 	document.querySelector("#sectionContent").innerHTML += card;
 }
 
