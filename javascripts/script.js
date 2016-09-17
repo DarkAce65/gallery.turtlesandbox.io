@@ -69,7 +69,7 @@ for(var i = 0; i < gallery.length; i++) {
 	unloadedIndices.push(i);
 }
 
-for(var i = 3; i < 6; i++) {
+for(var i = 0; i < 4; i++) {
 	createCard(i);
 }
 
