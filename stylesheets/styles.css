@@ -128,6 +128,7 @@ header nav {
 }
 
 .title h2, .subtitle {
+	float: left;
 	display: inline-block;
 	width: 50%;
 }
