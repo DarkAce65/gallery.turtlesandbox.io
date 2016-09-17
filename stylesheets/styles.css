@@ -212,6 +212,15 @@ footer {
     padding: 0 15px 4em;
 }
 
+.title h2, .subtitle {
+	display: inline-block;
+	width: 50%;
+}
+
+.subtitle {
+	text-align: right;
+}
+
 .gallery {
 	text-align: center;
 }
