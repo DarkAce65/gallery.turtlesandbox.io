@@ -205,7 +205,11 @@ footer {
 .card {
 	width: 80%;
 	margin: 10px auto;
-	padding: 15px;
+	padding: 4em 15px;
+}
+
+.card:first-child {
+    padding: 0 15px 4em;
 }
 
 .gallery {
