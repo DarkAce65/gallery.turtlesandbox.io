@@ -1,5 +1,9 @@
-function scrollToContent() {
-
+function scrollToContent(itemName) {
+	if(itemName) {
+		$("html, body").animate({
+			scrollTop: $("#" + itemName).offset().top - 60
+		}, 750);
+	}
 }
 
 function initContent() {
@@ -20,12 +24,12 @@ function createCard(item) {
 		card += '<hr><p class="text">' + item.content + '</p>';
 	}
 	card += '</div>';
-	document.querySelector("#sectionContent").innerHTML += card;
+
+	$("#sectionContent").append(card);
 }
 
-var menu = "";
 for(var i = 0; i < gallery.length; i++) {
-	menu +=	'<span onclick="scrollToContent(\'' + gallery[i].name + '\')">' + gallery[i].name + '</span>';
+	$("#menu").append('<span onclick="scrollToContent(\'' + gallery[i].name + '\')">' + gallery[i].name + '</span>');
+
 	createCard(gallery[i]);
 }
-document.querySelector("#menu").innerHTML = menu;
